@@ -18,8 +18,8 @@ dc:title
 
 <http://www.linked2safety.eu/lmds2>
       rdf:type owl:Ontology ;
-      dc:title "LMDS Security Model (Policy Model)"^^xsd:string ;
-      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+      dc:title "SMDA Security Model (Policy Model)"^^xsd:string ;
+      owl:versionInfo "Лабораторию можно добавить"^^xsd:string .
 
 :AccessPolicy
       rdf:type owl:Class ;
@@ -518,23 +518,13 @@ dc:title
       rdfs:domain :Condition , :StudyProject ;
       rdfs:range xsd:string .
 
-:hasSPDate
-      rdf:type owl:ObjectProperty ;
-      rdfs:comment "The hasSPDate property defines the point associated with the initialization of the study project"^^xsd:string ;
-      rdfs:domain :Condition , :StudyProject ;
-      rdfs:range :DateRange .
-
 :hasSPDescription
       rdf:type owl:DatatypeProperty ;
       rdfs:comment "The hasSPDescription property defines the description of the study project"^^xsd:string ;
       rdfs:domain :Condition , :StudyProject ;
       rdfs:range xsd:string .
 
-:hasSPLocation
-      rdf:type owl:DatatypeProperty ;
-      rdfs:comment "The hasSPLocation property defines the location/country of the clinical sites and hospitals where the study project has been conducted"^^xsd:string ;
-      rdfs:domain :Condition , :StudyProject ;
-      rdfs:range xsd:string .
+
 
 :hasSPProvider
       rdf:type owl:ObjectProperty ;
@@ -559,11 +549,6 @@ dc:title
       rdfs:domain :NamedGraph ;
       rdfs:range xsd:string .
 
-:hasSubscriptionDate
-      rdf:type owl:ObjectProperty ;
-      rdfs:comment "The hasSubscriptionDate property defines the subscription date of the user in the system"^^xsd:string ;
-      rdfs:domain :User , :UserProfile ;
-      rdfs:range :DateRange .
 
 :hasUser
       rdf:type owl:ObjectProperty ;
