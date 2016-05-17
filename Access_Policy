@@ -376,11 +376,7 @@ dc:title
       rdfs:domain :Condition , :NamedGraph ;
       rdfs:range xsd:string .
 
-:hasDatacubeProvider
-      rdf:type owl:ObjectProperty ;
-      rdfs:comment "The DatacubeProvider defines the entity responsible for creating and making the data cube  available (or else the owner of the data cube)"^^xsd:string ;
-      rdfs:domain :Condition , :NamedGraph ;
-      rdfs:range :User .
+
 
 :hasDatacubeSource
       rdf:type owl:ObjectProperty ;
@@ -406,11 +402,6 @@ dc:title
       rdfs:domain :Dimension ;
       rdfs:range xsd:string .
 
-:hasDisseminationPurpose
-      rdf:type owl:DatatypeProperty ;
-      rdfs:comment "The hasDisseminationPurpose property defines the dissemination purpose of the user from the results taken by the specific analysis of the data-cubes" ;
-      rdfs:domain :User , :UserProfile ;
-      rdfs:range xsd:string .
 
 :hasEqualDate
       rdf:type owl:DatatypeProperty ;
@@ -500,19 +491,6 @@ dc:title
       rdfs:comment "The hasRole property defines the role of the user in the Linked2Safety system"^^xsd:string ;
       rdfs:domain :User , :UserProfile ;
       rdfs:range :Role .
-
-:hasSPClinicaSite
-      rdf:type owl:DatatypeProperty ;
-      rdfs:comment "The SPClinicalSite defines the clinical sites/hospitals where the study project has been conducted"^^xsd:string ;
-      rdfs:domain :Condition , :StudyProject ;
-      rdfs:range xsd:string .
-
-:hasSPDescription
-      rdf:type owl:DatatypeProperty ;
-      rdfs:comment "The hasSPDescription property defines the description of the study project"^^xsd:string ;
-      rdfs:domain :Condition , :StudyProject ;
-      rdfs:range xsd:string .
-
 
 
 :hasSPProvider
