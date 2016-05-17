@@ -41,20 +41,11 @@ dc:title
       :hasCondition :Condition9 ;
       :hasUserProfile :UserProfile_4 .
 
-:AccessPolicy2
-      rdf:type owl:NamedIndividual , :AccessPolicy ;
+:AccessPolicy      rdf:type owl:NamedIndividual , :AccessPolicy ;
       rdfs:comment "An access policy enforced to RDF data-cubes having as dimension analysis authorizing end-users working in ZEINCRO"^^xsd:string ;
       :grantsAccess acl:Read_l2s ;
       :hasCondition :Condition1 ;
       :hasUserProfile :UserProfile_1 .
-
-
-:AccessPolicy5
-      rdf:type owl:NamedIndividual , :AccessPolicy ;
-      rdfs:comment "An access policy enforced to RDF data-cubes having as measure occurrence of cancer and measure values is more than 60 (exceeds 60 for at least one observation) authorizing access to users working in the area of oncology and coming from Cyprus"^^xsd:string ;
-      :grantsAccess acl:Read_l2s ;
-      :hasCondition :Condition4 ;
-      :hasUserProfile :UserProfile_3 .
 
 
 
@@ -72,14 +63,7 @@ dc:title
       :hasCondition :Condition7 ;
       :hasUserProfile :UserProfile_4 .
 
-:AccessPolicy9
-      rdf:type owl:NamedIndividual , :AccessPolicy ;
-      rdfs:comment "An access policy enforced to RDF data-cubes coming from a study project created in clinical sites located in Greece authorizing only users working in the area of oncology and coming from Cyprus"^^xsd:string ;
-      :grantsAccess acl:Read_l2s ;
-      :hasCondition :Condition7 ;
-      :appliesToNamedGraph
-              :NamedGraph_11 ;	  
-      :hasUserProfile :UserProfile_3 .
+
 
 :AccessPolicy_11
       rdf:type :AccessPolicy ;
@@ -171,40 +155,56 @@ dc:title
 
 :Condition1
       rdf:type owl:NamedIndividual , :Condition ;
-      rdfs:comment "Analysis is one of the dimension of the cube" ;
-      :hasDimension l2s-dim:Analysis .
+      rdfs:comment "Gender is one of the dimension of the cube" ;
+      :hasDimension l2s-dim:Gender .
 
 :Condition2
       rdf:type owl:NamedIndividual , :Condition ;
-      rdfs:comment "The measure of the data-cube is the diabetes incidences"^^xsd:string ;
-      :hasMeasure :DiabetesIncidences .
+      rdfs:comment "The measure of the data-cube is age"^^xsd:string ;
+      :hasDimension l2s-dim:Age .
 
-
-:Condition4
+:Condition3
       rdf:type owl:NamedIndividual , :Condition ;
-      rdfs:comment "The occurrence of cancer is more than 60"^^xsd:string ;
-      :hasMeasure :CancerOccurrence .
-
+      rdfs:comment "The measure of the data-cube is the analysis results"^^xsd:string ;
+      :hasDimension l2s-dim:AnalysisResults .
+     
+ :Condition4
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "The measure of the data-cube is the patient confidential info"^^xsd:string ;
+      :hasDimension l2s-dim:PatientInfo .
+      
+ :Condition5
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "The measure of the data-cube is the types of analysis"^^xsd:string ;
+      :hasDimension l2s-dim:TypesOfAnalysis .     
 
 :Condition6
       rdf:type owl:NamedIndividual , :Condition ;
-      rdfs:comment "The source of the data-cube is the lung cancer project study"^^xsd:string ;
-	  :hasDimension l2s-dim:Analysis ;
-      :hasDatacubeSource :LungCancerStudy .
-
+      rdfs:comment "The measure of the data-cube is the episode information"^^xsd:string ;
+      :hasDimension l2s-dim:EpisodeInformation .
+      
 :Condition7
       rdf:type owl:NamedIndividual , :Condition ;
-      rdfs:comment "The project study has as sponsor the \"Xpharma\""^^xsd:string ;
-	  :hasDimension l2s-dim:Analysis ;
-      :hasDatacubeSource :LungCancerStudy .
-
-
-
-:Condition9
+      rdfs:comment "The measure of the data-cube is the temporal matrix"^^xsd:string ;
+      :hasDimension l2s-dim:TemporalMatrix.
+      
+ :Condition8
       rdf:type owl:NamedIndividual , :Condition ;
-      rdfs:comment "Gender is one of the dimensions of the cube" ;
-      :hasDimension l2s-dim:Gender .
-
+      rdfs:comment "The measure of the data-cube is the doctors conclusion"^^xsd:string ;
+      :hasDimension l2s-dim:DoctorsConclusion .
+      
+  :Condition9
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "The measure of the data-cube is medicine knowledge"^^xsd:string ;
+      :hasDimension l2s-dim:MedicineKnowledge .
+      
+  :Condition10
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "The measure of the data-cube is the assesment results"^^xsd:string ;
+      :hasDimension l2s-dim:AssesmentResults;  
+      :hasDatacubeSource :EndocrinologyStudy .
+      
+  
 :DataProvider
       rdf:type owl:NamedIndividual , :Role .
 
@@ -212,31 +212,48 @@ dc:title
       rdf:type owl:Class ;
       rdfs:subClassOf owl:Thing .
 
-:DiabetesIncidences
-      rdf:type owl:NamedIndividual , :Measure .
 
 :Dimension
       rdf:type owl:Class ;
       rdfs:subClassOf owl:Thing .
-
-
-:Analysis
-      rdf:type owl:NamedIndividual , :Dimension .
-
+      
 :Gender
       rdf:type owl:NamedIndividual , :Dimension .
+
+:Age
+      rdf:type owl:NamedIndividual , :Dimension .
+
+:AnalysisResults
+      rdf:type owl:NamedIndividual , :Dimension .
+      
+:PatientInfo
+      rdf:type owl:NamedIndividual , :Dimension; 
+      rdfs:comment "Surname,name".
+      
+:TypesOfAnalysis
+      rdf:type owl:NamedIndividual , :Dimension .
+      
+:EpisodeInformation
+      rdf:type owl:NamedIndividual , :Dimension .
+     
+:TemporalMatrix
+      rdf:type owl:NamedIndividual , :Dimension .
+      
+:DoctorsConclusion
+      rdf:type owl:NamedIndividual , :Dimension .
+      
+:MedicineKnowledge
+      rdf:type owl:NamedIndividual , :Dimension;
+      rdfs:comment "LOD,references".
+      
+:AssesmentResults
+      rdf:type owl:NamedIndividual , :Dimension .
+
 
 
 :EndocrinologyStudy
       rdf:type owl:NamedIndividual , :StudyProject .
 
-:MarySmith
-      rdf:type owl:NamedIndividual , :User ;
-      :hasLocation "Greece"^^xsd:string ;
-      :hasPurpose "Perform p-value analysis "^^xsd:string ;
-      :hasQualification "Student"^^xsd:string ;
-      :hasRole :ClinicalResearcher ;
-      :hasWorkingArea "Diabetes"^^xsd:string .
 
 :Measure
       rdf:type owl:Class ;
@@ -271,22 +288,39 @@ dc:title
       rdfs:comment "The user profile refers to those users working in ZEINCRO" ;
       :hasOrganization "ZEINCRO"^^xsd:string .
 
-:UserProfile_2
-      rdf:type owl:NamedIndividual , :UserProfile ;
-      rdfs:comment "The user profile refers to those users working in Almazov center" .
-     
 
-:UserProfile_3
-      rdf:type owl:NamedIndividual , :UserProfile ;
-      rdfs:comment "The user profile refers to those users working in the area of oncology and coming from Cyprus"^^xsd:string ;
-      :hasLocation "Greece"^^xsd:string ;
-      :hasWorkingArea "Oncology"^^xsd:string .
 
 :UserProfile_4
       rdf:type owl:NamedIndividual , :UserProfile ;
       rdfs:comment "The user profile refers to those users that has role 'ClinicalTrialCoordinator'"^^xsd:string ;
       :hasRole :ClinicalTrialCoordinator .
+      
+:UserProfile_11
+      rdf:type owl:NamedIndividual , :UserProfile ;
+      rdfs:comment "The user profile refers to those users who is researcher or data analyst" ;
+      :hasStudingArea "Medicine"^^xsd:string;
+      :hasQualification: "scientist, phd,student"^^xsd:string.
 
+:UserProfile_2
+      rdf:type owl:NamedIndividual , :UserProfile ;
+      rdfs:comment "The user profile refers to those users working in Almazov center";
+      :hasOrganization "Almazov"^^xsd:string .
+      
+      
+ :UserProfile_13
+      rdf:type owl:NamedIndividual , :UserProfile ;
+      rdfs:comment "The user profile refers to the contributors";
+      :hasOrganization "ITMO UNIVERSITY"^^xsd:string;
+      :hasLaboratory "ISST"^^xsd:string.
+      
+ :UserProfile_14
+      rdf:type owl:NamedIndividual , :UserProfile ;
+      rdfs:comment "The user profile refers to the administrator of SMDA";
+      :hasOrganization "ITMO UNIVERSITY"^^xsd:string;
+      :hasLaboratory "ISST"^^xsd:string.
+ 
+ 
+ 
 :appliesToNamedGraph
       rdf:type owl:ObjectProperty ;
       rdfs:comment "An access policy that applies to an lmds:NamedGraph. When an access policy has this property it means that the access policy applies to a NamedGraph (that contains a data-cube)."^^xsd:string ;
@@ -340,11 +374,7 @@ dc:title
       rdfs:domain :Measure ;
       rdfs:range xsd:integer .
 
-:hasExpertise
-      rdf:type owl:DatatypeProperty ;
-      rdfs:comment "e.g. biologist, epidemiologist, doctor"^^xsd:string ;
-      rdfs:domain :User , :UserProfile ;
-      rdfs:range xsd:string .
+
 
 :hasGraphURI
       rdf:type owl:DatatypeProperty ;
@@ -381,11 +411,6 @@ dc:title
       rdfs:domain :Measure ;
       rdfs:range xsd:integer .
 
-:hasOccupation
-      rdf:type owl:DatatypeProperty ;
-      rdfs:comment "e.g. scientist, data analyst, etc."^^xsd:string ;
-      rdfs:domain :User , :UserProfile ;
-      rdfs:range xsd:string .
 
 :hasOrganization
       rdf:type owl:DatatypeProperty ;
@@ -413,22 +438,10 @@ dc:title
 
 :hasRole
       rdf:type owl:ObjectProperty ;
-      rdfs:comment "The hasRole property defines the role of the user in the Linked2Safety system"^^xsd:string ;
+      rdfs:comment "The hasRole property defines the role of the user in the SMDA system"^^xsd:string ;
       rdfs:domain :User , :UserProfile ;
       rdfs:range :Role .
 
-
-:hasSPProvider
-      rdf:type owl:ObjectProperty ;
-      rdfs:comment "The SPProvider defines the entity responsible for running the study project"^^xsd:string ;
-      rdfs:domain :Condition , :StudyProject ;
-      rdfs:range :User .
-
-:hasSPTitle
-      rdf:type owl:DatatypeProperty ;
-      rdfs:comment "The hasSPTitle property efines the name/title of the study project"^^xsd:string ;
-      rdfs:domain :Condition , :StudyProject ;
-      rdfs:range xsd:string .
 
 :hasSparqlEndpoint
       rdf:type owl:DatatypeProperty ;
