@@ -16,7 +16,7 @@
 dc:title
       rdf:type owl:AnnotationProperty .
 
-<http://www.linked2safety.eu/lmds2>
+<сайт проекта>
       rdf:type owl:Ontology ;
       dc:title "SMDA Security Model (Policy Model)"^^xsd:string ;
       owl:versionInfo "Лабораторию можно добавить"^^xsd:string .
@@ -369,11 +369,6 @@ dc:title
       rdfs:domain :AccessPolicy ;
       rdfs:range :Condition .
 
-:hasDatacubeDate
-      rdf:type owl:ObjectProperty ;
-      rdfs:comment "The hasDatacubeDate property defines the date associated with the creation of the data cube"^^xsd:string ;
-      rdfs:domain :Condition , :NamedGraph ;
-      rdfs:range :DateRange .
 
 :hasDatacubeDescription
       rdf:type owl:DatatypeProperty ;
@@ -438,12 +433,6 @@ dc:title
 :hasGraphURI
       rdf:type owl:DatatypeProperty ;
       rdfs:domain :NamedGraph ;
-      rdfs:range xsd:string .
-
-:hasLocation
-      rdf:type owl:DatatypeProperty ;
-      rdfs:comment "The hasLocation property defines the location of the user" ;
-      rdfs:domain :User , :UserProfile ;
       rdfs:range xsd:string .
 
 :hasMaxDate
@@ -531,12 +520,6 @@ dc:title
       rdfs:comment "The SPProvider defines the entity responsible for running the study project"^^xsd:string ;
       rdfs:domain :Condition , :StudyProject ;
       rdfs:range :User .
-
-:hasSPSponsor
-      rdf:type owl:DatatypeProperty ;
-      rdfs:comment "The SPSponsor defines the sponsor entity of the study project"^^xsd:string ;
-      rdfs:domain :Condition , :StudyProject ;
-      rdfs:range xsd:string .
 
 :hasSPTitle
       rdf:type owl:DatatypeProperty ;
