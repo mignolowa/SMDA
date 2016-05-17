@@ -11,15 +11,14 @@
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
-@prefix l2s-dim: <http://www.linked2safety-project.eu/dimension/>.
+@prefix l2s-dim: <http://www.almazovcentre.ru/>.
 
 dc:title
       rdf:type owl:AnnotationProperty .
 
-<сайт проекта>
+<>
       rdf:type owl:Ontology ;
       dc:title "SMDA Security Model (Policy Model)"^^xsd:string ;
-      owl:versionInfo "Лабораторию можно добавить"^^xsd:string .
 
 :AccessPolicy
       rdf:type owl:Class ;
@@ -27,127 +26,35 @@ dc:title
 
 :AccessPolicy1
       rdf:type owl:NamedIndividual , :AccessPolicy ;
-      rdfs:comment "An access policy enforced to datacube-graph-2 authorizing only users that their role is defined as 'ClinicalTrialCordinator'"^^xsd:string ;
+      rdfs:comment "An access policy for Guests"^^xsd:string ;
       :appliesToNamedGraph
-              :NamedGraph_14 ;
+              :NamedGraph_1 ;
       :grantsAccess acl:Read_l2s ;
-      :hasCondition :Condition7 ;
-      :hasUserProfile :UserProfile_4 .
-
-:AccessPolicy10
-      rdf:type owl:NamedIndividual , :AccessPolicy ;
-      rdfs:comment "An access policy enforced to RDF data-cubes having as dimension the gender and coming from a study project created in clinical sites located in Greece authorizing only users that their role is defined as 'ClinicalTrialCordinator'"^^xsd:string ;
-      :grantsAccess acl:Read_l2s ;
-      :hasCondition :Condition9 ;
-      :hasUserProfile :UserProfile_4 .
-
-:AccessPolicy      rdf:type owl:NamedIndividual , :AccessPolicy ;
-      rdfs:comment "An access policy enforced to RDF data-cubes having as dimension analysis authorizing end-users working in ZEINCRO"^^xsd:string ;
-      :grantsAccess acl:Read_l2s ;
-      :hasCondition :Condition1 ;
+      :hasCondition :Condition1, : Condition2, : Condition3, : Condition5, :Condition9 ;
       :hasUserProfile :UserProfile_1 .
 
-
-
-:AccessPolicy7
+:AccessPolicy2
       rdf:type owl:NamedIndividual , :AccessPolicy ;
-      rdfs:comment "An access policy enforced to RDF data-cubes coming from a study project related to lung cancer authorizing only Maria Smith"^^xsd:string ;
-      :grantsAccess acl:Read_l2s ;
-      :hasCondition :Condition6 ;
-      :hasUser :MarySmith .
+      rdfs:comment "An access policy for Almazovs medicine staff"^^xsd:string ;
+      :grantsAccess acl:Read_l2;
+      :hasCondition :Condition1, :Condition2, :Condition3, : Condition4, : Condition5, : Condition6, :Condition7, :Condition8, :Condition9, : Condition10 ;
+      :hasUserProfile :UserProfile_2 .
 
-:AccessPolicy8
+:AccessPolicy3
       rdf:type owl:NamedIndividual , :AccessPolicy ;
-      rdfs:comment "An access policy enforced to RDF data-cubes having as sponsor the \"Xpharma\" authorizing only users that their role is defined as 'ClinicalTrialCordinator'"^^xsd:string ;
-      :grantsAccess acl:Read_l2s ;
-      :hasCondition :Condition7 ;
+      rdfs:comment "An access policy for contributors"^^xsd:string ;
+      :grantsAccess acl:Read_l2s;
+      :hasCondition :Condition1, :Condition2, :Condition3, :Condition5, :Condition6, :Condition7, :Condition8, :Condition9, :Condition10;
+      :hasUserProfile :UserProfile_3 .
+
+
+:AccessPolicy4
+      rdf:type owl:NamedIndividual , :AccessPolicy ;
+      rdfs:comment "An access policy for administrator"^^xsd:string ;
+      :grantsAccess acl:Read_l2s, : write_12s;
+      :hasCondition :Condition1, :Condition2, :Condition3, : Condition4, : Condition5, : Condition6, :Condition7, :Condition8, :Condition9, : Condition10 ;;
       :hasUserProfile :UserProfile_4 .
 
-
-
-:AccessPolicy_11
-      rdf:type :AccessPolicy ;
-      :appliesToNamedGraph
-              :NamedGraph_11 ;
-      :grantsAccess acl:Read_l2s ;
-      :hasUserProfile :? .
-
-:AccessPolicy_12
-      rdf:type :AccessPolicy ;
-      :appliesToNamedGraph
-              :NamedGraph_12 ;
-      :grantsAccess acl:Read_l2s ;
-      :hasUser :MarySmith .
-
-:AccessPolicy_13
-      rdf:type :AccessPolicy ;
-      :appliesToNamedGraph
-              :NamedGraph_13 ;
-      :grantsAccess acl:Read_l2s ;
-      :hasUserProfile:?.
-
-:AccessPolicy_14
-      rdf:type :AccessPolicy ;
-      :appliesToNamedGraph
-              :NamedGraph_14 ;
-      :grantsAccess acl:Read_l2s ;
-      :hasUser :MarySmith .
-
-:AccessPolicy_15
-      rdf:type :AccessPolicy ;
-      :appliesToNamedGraph
-              :NamedGraph_15 ;
-      :grantsAccess acl:Read_l2s ;
-      :hasUserProfile :? .
-
-:AccessPolicy_16
-      rdf:type :AccessPolicy ;
-      :appliesToNamedGraph
-              :NamedGraph_16 ;
-      :grantsAccess acl:Read_l2s ;
-      :hasUser :MarySmith .
-
-:AccessPolicy_17
-      rdf:type :AccessPolicy ;
-      :appliesToNamedGraph
-              :NamedGraph_17 ;
-      :grantsAccess acl:Read_l2s ;
-      :hasUser :MarySmith .
-
-:AccessPolicy_18
-      rdf:type :AccessPolicy ;
-      :appliesToNamedGraph
-              :NamedGraph_18 ;
-      :grantsAccess acl:Read_l2s ;
-      :hasUserProfile :? .
-
-:AccessPolicy_19
-      rdf:type :AccessPolicy ;
-      :appliesToNamedGraph
-              :NamedGraph_19 ;
-      :grantsAccess acl:Read_l2s ;
-      :hasUserProfile :? .
-
-:AccessPolicy_20
-      rdf:type :AccessPolicy ;
-      :appliesToNamedGraph
-              :NamedGraph_20 ;
-      :grantsAccess acl:Read_l2s ;
-      :hasUser :MarySmith .
-
-:AccessPolicy_21
-      rdf:type :AccessPolicy ;
-      :appliesToNamedGraph
-              :NamedGraph_21 ;
-      :grantsAccess acl:Read_l2s ;
-      :hasUser :MarySmith .
-
-
-:ClinicalResearcher
-      rdf:type owl:NamedIndividual , :Role .
-
-:ClinicalTrialCoordinator
-      rdf:type owl:NamedIndividual , :Role .
 
 :Condition
       rdf:type owl:Class ;
@@ -205,9 +112,6 @@ dc:title
       :hasDatacubeSource :EndocrinologyStudy .
       
   
-:DataProvider
-      rdf:type owl:NamedIndividual , :Role .
-
 :DateRange
       rdf:type owl:Class ;
       rdfs:subClassOf owl:Thing .
@@ -264,9 +168,6 @@ dc:title
       rdfs:subClassOf rdfg-1:Graph .
 
 
-:PlatformManager
-      rdf:type owl:NamedIndividual , :Role .
-
 :Role
       rdf:type owl:Class ;
       rdfs:subClassOf owl:Thing .
@@ -283,19 +184,8 @@ dc:title
       rdf:type owl:Class ;
       rdfs:subClassOf owl:Thing .
 
+:
 :UserProfile_1
-      rdf:type owl:NamedIndividual , :UserProfile ;
-      rdfs:comment "The user profile refers to those users working in ZEINCRO" ;
-      :hasOrganization "ZEINCRO"^^xsd:string .
-
-
-
-:UserProfile_4
-      rdf:type owl:NamedIndividual , :UserProfile ;
-      rdfs:comment "The user profile refers to those users that has role 'ClinicalTrialCoordinator'"^^xsd:string ;
-      :hasRole :ClinicalTrialCoordinator .
-      
-:UserProfile_11
       rdf:type owl:NamedIndividual , :UserProfile ;
       rdfs:comment "The user profile refers to those users who is researcher or data analyst" ;
       :hasStudingArea "Medicine"^^xsd:string;
@@ -307,13 +197,13 @@ dc:title
       :hasOrganization "Almazov"^^xsd:string .
       
       
- :UserProfile_13
+ :UserProfile_3
       rdf:type owl:NamedIndividual , :UserProfile ;
       rdfs:comment "The user profile refers to the contributors";
       :hasOrganization "ITMO UNIVERSITY"^^xsd:string;
       :hasLaboratory "ISST"^^xsd:string.
       
- :UserProfile_14
+ :UserProfile_4
       rdf:type owl:NamedIndividual , :UserProfile ;
       rdfs:comment "The user profile refers to the administrator of SMDA";
       :hasOrganization "ITMO UNIVERSITY"^^xsd:string;
@@ -323,13 +213,10 @@ dc:title
  
 :appliesToNamedGraph
       rdf:type owl:ObjectProperty ;
-      rdfs:comment "An access policy that applies to an lmds:NamedGraph. When an access policy has this property it means that the access policy applies to a NamedGraph (that contains a data-cube)."^^xsd:string ;
+      rdfs:comment "An access policy that applies to an SMDA:NamedGraph."^^xsd:string ;
       rdfs:domain :AccessPolicy ;
       rdfs:range :NamedGraph .
 
-:datacube-graph-2
-      rdf:type owl:NamedIndividual , :NamedGraph ;
-      rdfs:comment "The datacube-graph-2 represents a certain RDF data-cube that has four dimensions, namely sex, drug, snp and breast cancer"^^xsd:string .
 
 :deniesAccess
       rdf:type owl:ObjectProperty ;
@@ -443,12 +330,6 @@ dc:title
       rdfs:range :Role .
 
 
-:hasSparqlEndpoint
-      rdf:type owl:DatatypeProperty ;
-      rdfs:domain :NamedGraph ;
-      rdfs:range xsd:string .
-
-
 :hasUser
       rdf:type owl:ObjectProperty ;
       rdfs:comment "The hasUser defines the user who is granted or denied the specific access policy "^^xsd:string ;
@@ -551,6 +432,10 @@ acl:Write
       rdf:type owl:Class ;
       rdfs:label "write"@en ;
       rdfs:subClassOf acl:Access .
+      
+acl:Write_12s
+      rdf:type acl:Write, owl:NamedIndividual ;
+
 
 acl:accessControl
       rdf:type owl:AnnotationProperty ;
