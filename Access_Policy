@@ -1,6 +1,6 @@
-# baseURI: http://www.linked2safety.eu/lmds2
 
-@prefix :        <http://www.linked2safety.eu/lmds2#> .
+
+@prefix :        <SMDA> .
 @prefix acl:     <http://www.w3.org/ns/auth/acl#> .
 @prefix dc:      <http://purl.org/dc/elements/1.1/> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
@@ -209,9 +209,7 @@ dc:title
       :hasOrganization "ITMO UNIVERSITY"^^xsd:string;
       :hasLaboratory "ISST"^^xsd:string.
  
- 
- 
-:appliesToNamedGraph
+ :appliesToNamedGraph
       rdf:type owl:ObjectProperty ;
       rdfs:comment "An access policy that applies to an SMDA:NamedGraph."^^xsd:string ;
       rdfs:domain :AccessPolicy ;
