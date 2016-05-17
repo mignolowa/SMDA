@@ -48,19 +48,6 @@ dc:title
       :hasCondition :Condition1 ;
       :hasUserProfile :UserProfile_1 .
 
-:AccessPolicy3
-      rdf:type owl:NamedIndividual , :AccessPolicy ;
-      rdfs:comment "An access policy enforced to RDF data-cubes having as measure the number of diabetes incidences authorizing only John Smith"^^xsd:string ;
-      :grantsAccess acl:Read_l2s ;
-      :hasCondition :Condition2 ;
-      :hasUser :JohnSmith .
-
-:AccessPolicy4
-      rdf:type owl:NamedIndividual , :AccessPolicy ;
-      rdfs:comment "An access policy enforced to RDF data-cubes having as dimension drug and dimension values include aspirin and authorizing access to users working in the area of oncology"^^xsd:string ;
-      :grantsAccess acl:Read_l2s ;
-      :hasCondition :Condition3 ;
-      :hasUserProfile :UserProfile_3 .
 
 :AccessPolicy5
       rdf:type owl:NamedIndividual , :AccessPolicy ;
@@ -69,12 +56,7 @@ dc:title
       :hasCondition :Condition4 ;
       :hasUserProfile :UserProfile_3 .
 
-:AccessPolicy6
-      rdf:type owl:NamedIndividual , :AccessPolicy ;
-      rdfs:comment "An access policy enforced to RDF data-cubes provided by John Smith authorizing end-users working in ZEINCRO"^^xsd:string ;
-      :grantsAccess acl:Read_l2s ;
-      :hasCondition :Condition5 ;
-      :hasUserProfile :UserProfile_1 .
+
 
 :AccessPolicy7
       rdf:type owl:NamedIndividual , :AccessPolicy ;
@@ -104,7 +86,7 @@ dc:title
       :appliesToNamedGraph
               :NamedGraph_11 ;
       :grantsAccess acl:Read_l2s ;
-      :hasUser :JohnSmith .
+      :hasUserProfile :? .
 
 :AccessPolicy_12
       rdf:type :AccessPolicy ;
@@ -118,7 +100,7 @@ dc:title
       :appliesToNamedGraph
               :NamedGraph_13 ;
       :grantsAccess acl:Read_l2s ;
-      :hasUser :JohnSmith .
+      :hasUserProfile:?.
 
 :AccessPolicy_14
       rdf:type :AccessPolicy ;
@@ -132,14 +114,14 @@ dc:title
       :appliesToNamedGraph
               :NamedGraph_15 ;
       :grantsAccess acl:Read_l2s ;
-      :hasUser :JohnSmith , :MarySmith .
+      :hasUserProfile :? .
 
 :AccessPolicy_16
       rdf:type :AccessPolicy ;
       :appliesToNamedGraph
               :NamedGraph_16 ;
       :grantsAccess acl:Read_l2s ;
-      :hasUser :JohnSmith , :MarySmith .
+      :hasUser :MarySmith .
 
 :AccessPolicy_17
       rdf:type :AccessPolicy ;
@@ -153,14 +135,14 @@ dc:title
       :appliesToNamedGraph
               :NamedGraph_18 ;
       :grantsAccess acl:Read_l2s ;
-      :hasUser :JohnSmith .
+      :hasUserProfile :? .
 
 :AccessPolicy_19
       rdf:type :AccessPolicy ;
       :appliesToNamedGraph
               :NamedGraph_19 ;
       :grantsAccess acl:Read_l2s ;
-      :hasUser :JohnSmith .
+      :hasUserProfile :? .
 
 :AccessPolicy_20
       rdf:type :AccessPolicy ;
@@ -174,7 +156,7 @@ dc:title
       :appliesToNamedGraph
               :NamedGraph_21 ;
       :grantsAccess acl:Read_l2s ;
-      :hasUser :JohnSmith , :MarySmith .
+      :hasUser :MarySmith .
 
 
 :ClinicalResearcher
@@ -197,21 +179,12 @@ dc:title
       rdfs:comment "The measure of the data-cube is the diabetes incidences"^^xsd:string ;
       :hasMeasure :DiabetesIncidences .
 
-:Condition3
-      rdf:type owl:NamedIndividual , :Condition ;
-      rdfs:comment "Aspirin is one of the values receiving the dimension Drug"^^xsd:string ;
-      :hasDimension l2s-dim:Drug .
 
 :Condition4
       rdf:type owl:NamedIndividual , :Condition ;
       rdfs:comment "The occurrence of cancer is more than 60"^^xsd:string ;
       :hasMeasure :CancerOccurrence .
 
-:Condition5
-      rdf:type owl:NamedIndividual , :Condition ;
-      rdfs:comment "The provider of the data-cube is John Smith"^^xsd:string ;
-      :hasDatacubeProvider
-              :JohnSmith .
 
 :Condition6
       rdf:type owl:NamedIndividual , :Condition ;
@@ -253,19 +226,6 @@ dc:title
 :Gender
       rdf:type owl:NamedIndividual , :Dimension .
 
-:JohnSmith
-      rdf:type owl:NamedIndividual , :User ;
-      :hasDisseminationPurpose
-              "Publish in BIBE 2013"^^xsd:string ;
-      :hasExpertise "Biologist"^^xsd:string ;
-      :hasOccupation "Scientist"^^xsd:string ;
-      :hasOrganization "CING"^^xsd:string ;
-      :hasOrganizationType
-              "ResearchInstitute"^^xsd:string ;
-      :hasPurpose "Perform p-value analysis"^^xsd:string ;
-      :hasQualification "PhD"^^xsd:string ;
-      :hasRole :ClinicalTrialCoordinator ;
-      :hasWorkingArea "Oncology"^^xsd:string .
 
 :EndocrinologyStudy
       rdf:type owl:NamedIndividual , :StudyProject .
@@ -313,8 +273,8 @@ dc:title
 
 :UserProfile_2
       rdf:type owl:NamedIndividual , :UserProfile ;
-      rdfs:comment "The user profile refers to those users coming from Cyprus" ;
-      :hasLocation "Cyprus"^^xsd:string .
+      rdfs:comment "The user profile refers to those users working in Almazov center" .
+     
 
 :UserProfile_3
       rdf:type owl:NamedIndividual , :UserProfile ;
