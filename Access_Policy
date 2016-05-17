@@ -38,12 +38,12 @@ dc:title
       rdf:type owl:NamedIndividual , :AccessPolicy ;
       rdfs:comment "An access policy enforced to RDF data-cubes having as dimension the gender and coming from a study project created in clinical sites located in Greece authorizing only users that their role is defined as 'ClinicalTrialCordinator'"^^xsd:string ;
       :grantsAccess acl:Read_l2s ;
-      :hasCondition :Condition10 , :Condition9 ;
+      :hasCondition :Condition9 ;
       :hasUserProfile :UserProfile_4 .
 
 :AccessPolicy2
       rdf:type owl:NamedIndividual , :AccessPolicy ;
-      rdfs:comment "An access policy enforced to RDF data-cubes having as dimension dyslipidemia authorizing end-users working in ZEINCRO"^^xsd:string ;
+      rdfs:comment "An access policy enforced to RDF data-cubes having as dimension analysis authorizing end-users working in ZEINCRO"^^xsd:string ;
       :grantsAccess acl:Read_l2s ;
       :hasCondition :Condition1 ;
       :hasUserProfile :UserProfile_1 .
@@ -176,9 +176,6 @@ dc:title
       :grantsAccess acl:Read_l2s ;
       :hasUser :JohnSmith , :MarySmith .
 
-:CancerOccurrence
-      rdf:type owl:NamedIndividual , :Measure ;
-      :hasMinMeasureValue 60 .
 
 :ClinicalResearcher
       rdf:type owl:NamedIndividual , :Role .
@@ -192,13 +189,8 @@ dc:title
 
 :Condition1
       rdf:type owl:NamedIndividual , :Condition ;
-      rdfs:comment "Dyslipidemia is one of the dimension of the cube" ;
-      :hasDimension l2s-dim:Dyslipidemia .
-
-:Condition10
-      rdf:type owl:NamedIndividual , :Condition ;
-      rdfs:comment "The project study is located in Cyprus"^^xsd:string ;
-      :hasSPLocation "Cyprus"^^xsd:string .
+      rdfs:comment "Analysis is one of the dimension of the cube" ;
+      :hasDimension l2s-dim:Analysis .
 
 :Condition2
       rdf:type owl:NamedIndividual , :Condition ;
@@ -224,19 +216,16 @@ dc:title
 :Condition6
       rdf:type owl:NamedIndividual , :Condition ;
       rdfs:comment "The source of the data-cube is the lung cancer project study"^^xsd:string ;
-	  :hasDimension l2s-dim:Dyslipidemia ;
+	  :hasDimension l2s-dim:Analysis ;
       :hasDatacubeSource :LungCancerStudy .
 
 :Condition7
       rdf:type owl:NamedIndividual , :Condition ;
       rdfs:comment "The project study has as sponsor the \"Xpharma\""^^xsd:string ;
-	  :hasDimension l2s-dim:Dyslipidemia ;
+	  :hasDimension l2s-dim:Analysis ;
       :hasDatacubeSource :LungCancerStudy .
 
-:Condition8
-      rdf:type owl:NamedIndividual , :Condition ;
-      rdfs:comment "The project study is located in Greece"^^xsd:string ;
-      :hasSPLocation "Greece"^^xsd:string .
+
 
 :Condition9
       rdf:type owl:NamedIndividual , :Condition ;
@@ -257,11 +246,8 @@ dc:title
       rdf:type owl:Class ;
       rdfs:subClassOf owl:Thing .
 
-:Drug
-      rdf:type owl:NamedIndividual , :Dimension ;
-      :hasDimesionValue "Aspirin"^^xsd:string .
 
-:Dyslipidemia
+:Analysis
       rdf:type owl:NamedIndividual , :Dimension .
 
 :Gender
@@ -281,7 +267,7 @@ dc:title
       :hasRole :ClinicalTrialCoordinator ;
       :hasWorkingArea "Oncology"^^xsd:string .
 
-:LungCancerStudy
+:EndocrinologyStudy
       rdf:type owl:NamedIndividual , :StudyProject .
 
 :MarySmith
@@ -370,20 +356,6 @@ dc:title
       rdfs:range :Condition .
 
 
-:hasDatacubeDescription
-      rdf:type owl:DatatypeProperty ;
-      rdfs:comment "The hasDatacubeDescription property defines the description of the data cube" ;
-      rdfs:domain :Condition , :NamedGraph ;
-      rdfs:range xsd:string .
-
-
-
-:hasDatacubeSource
-      rdf:type owl:ObjectProperty ;
-      rdfs:comment "The DatacubeSource defines the source or else the study project from which the described data cube  has been derived"^^xsd:string ;
-      rdfs:domain :Condition , :NamedGraph ;
-      rdfs:range :StudyProject .
-
 :hasDatacubeTitle
       rdf:type owl:DatatypeProperty ;
       rdfs:comment "The hasDatacubeTitle property defines the name/title of the data cube" ;
@@ -395,13 +367,6 @@ dc:title
       rdfs:comment "The hasDimension defines the dimension of the data-cube"^^xsd:string ;
       rdfs:domain :Condition , :NamedGraph ;
       rdfs:range :Dimension .
-
-:hasDimesionValue
-      rdf:type owl:DatatypeProperty ;
-      rdfs:comment "The hasDimesionValue defines the value of a dimension based on which we will search for the data-cubes that are involved in a policy (e.g. if it's defined that Dimension Drug hasDimensionValue='aspirin', that means that we apply the specific policy to cubes having the Drug aspirin in their Dimensions' values)"^^xsd:string ;
-      rdfs:domain :Dimension ;
-      rdfs:range xsd:string .
-
 
 :hasEqualDate
       rdf:type owl:DatatypeProperty ;
