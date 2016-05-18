@@ -10,7 +10,7 @@
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
-@prefix l2s-dim: <http://www.almazovcentre.ru/>.
+@prefix l0s-dim: <http://www.almazovcentre.ru/>.
 
 dc:title
       rdf:type owl:AnnotationProperty .
@@ -34,15 +34,15 @@ dc:title
 
 :AccessPolicy2
       rdf:type owl:NamedIndividual , :AccessPolicy ;
-      rdfs:comment "An access policy for Almazovs medicine staff"^^xsd:string ;
-      :grantsAccess acl:Read_l2;
+      rdfs:comment "An access policy for Almazov`s medicine staff"^^xsd:string ;
+      :grantsAccess acl:Read_l0s;
       :hasCondition :Condition1, :Condition2, :Condition3, : Condition4, : Condition5, : Condition6, :Condition7, :Condition8, :Condition9, : Condition10 ;
       :hasUserProfile :UserProfile_2 .
 
 :AccessPolicy3
       rdf:type owl:NamedIndividual , :AccessPolicy ;
       rdfs:comment "An access policy for contributors"^^xsd:string ;
-      :grantsAccess acl:Read_l2s;
+      :grantsAccess acl:Read_l0s;
       :hasCondition :Condition1, :Condition2, :Condition3, :Condition5, :Condition6, :Condition7, :Condition8, :Condition9, :Condition10;
       :hasUserProfile :UserProfile_3 .
 
@@ -50,7 +50,7 @@ dc:title
 :AccessPolicy4
       rdf:type owl:NamedIndividual , :AccessPolicy ;
       rdfs:comment "An access policy for administrator"^^xsd:string ;
-      :grantsAccess acl:Read_l2s, : write_12s;
+      :grantsAccess acl:Read_l0s, : write_10s;
       :hasCondition :Condition1, :Condition2, :Condition3, : Condition4, : Condition5, : Condition6, :Condition7, :Condition8, :Condition9, : Condition10 ;;
       :hasUserProfile :UserProfile_4 .
 
@@ -62,52 +62,52 @@ dc:title
 :Condition1
       rdf:type owl:NamedIndividual , :Condition ;
       rdfs:comment "Gender is one of the dimension of the cube" ;
-      :hasDimension l2s-dim:Gender .
+      :hasDimension l0s-dim:Gender .
 
 :Condition2
       rdf:type owl:NamedIndividual , :Condition ;
       rdfs:comment "The measure of the data-cube is age"^^xsd:string ;
-      :hasDimension l2s-dim:Age .
+      :hasDimension l0s-dim:Age .
 
 :Condition3
       rdf:type owl:NamedIndividual , :Condition ;
       rdfs:comment "The measure of the data-cube is the analysis results"^^xsd:string ;
-      :hasDimension l2s-dim:AnalysisResults .
+      :hasDimension l0s-dim:AnalysisResults .
      
 :Condition4
       rdf:type owl:NamedIndividual , :Condition ;
       rdfs:comment "The measure of the data-cube is the patient confidential info"^^xsd:string ;
-      :hasDimension l2s-dim:PatientInfo .
+      :hasDimension l0s-dim:PatientInfo .
       
 :Condition5
       rdf:type owl:NamedIndividual , :Condition ;
       rdfs:comment "The measure of the data-cube is the types of analysis"^^xsd:string ;
-      :hasDimension l2s-dim:TypesOfAnalysis .     
+      :hasDimension l0s-dim:TypesOfAnalysis .     
 
 :Condition6
       rdf:type owl:NamedIndividual , :Condition ;
       rdfs:comment "The measure of the data-cube is the episode information"^^xsd:string ;
-      :hasDimension l2s-dim:EpisodeInformation .
+      :hasDimension l0s-dim:EpisodeInformation .
       
 :Condition7
       rdf:type owl:NamedIndividual , :Condition ;
       rdfs:comment "The measure of the data-cube is the temporal matrix"^^xsd:string ;
-      :hasDimension l2s-dim:TemporalMatrix.
+      :hasDimension l0s-dim:TemporalMatrix.
       
 :Condition8
       rdf:type owl:NamedIndividual , :Condition ;
       rdfs:comment "The measure of the data-cube is the doctors conclusion"^^xsd:string ;
-      :hasDimension l2s-dim:DoctorsConclusion .
+      :hasDimension l0s-dim:DoctorsConclusion .
       
- :Condition9
+:Condition9
       rdf:type owl:NamedIndividual , :Condition ;
       rdfs:comment "The measure of the data-cube is medicine knowledge"^^xsd:string ;
-      :hasDimension l2s-dim:MedicineKnowledge .
+      :hasDimension l0s-dim:MedicineKnowledge .
       
 :Condition10
       rdf:type owl:NamedIndividual , :Condition ;
       rdfs:comment "The measure of the data-cube is the assesment results"^^xsd:string ;
-      :hasDimension l2s-dim:AssesmentResults;  
+      :hasDimension l0s-dim:AssesmentResults;  
       :hasDatacubeSource :EndocrinologyStudy .
       
   
@@ -153,7 +153,6 @@ dc:title
       rdf:type owl:NamedIndividual , :Dimension .
 
 
-
 :EndocrinologyStudy
       rdf:type owl:NamedIndividual , :StudyProject .
 
@@ -191,7 +190,7 @@ dc:title
 
 :UserProfile_2
       rdf:type owl:NamedIndividual , :UserProfile ;
-      rdfs:comment "The user profile refers to those users working in Almazov center";
+      rdfs:comment "The user profile refers to those users who working in Almazov center";
       :hasOrganization "Almazov"^^xsd:string .
       
       
@@ -419,7 +418,7 @@ acl:Read
       rdfs:label "read"@en ;
       rdfs:subClassOf acl:Access .
 
-acl:Read_l2s
+acl:Read_l0s
       rdf:type acl:Read , owl:NamedIndividual .
 
 acl:Write
@@ -427,7 +426,7 @@ acl:Write
       rdfs:label "write"@en ;
       rdfs:subClassOf acl:Access .
       
-acl:Write_12s
+acl:Write_10s
       rdf:type acl:Write, owl:NamedIndividual ;
 
 
